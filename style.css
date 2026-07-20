@@ -299,3 +299,23 @@ main{ position: relative; z-index: 2; }
   .contact__links{ flex-direction: column; align-items: stretch; }
   .contact__links a{ text-align: center; }
 }
+
+/* ---------- print (PDF 제출용) ---------- */
+@media print{
+  @page{ margin: 14mm 12mm; }
+  html{ font-size: 14px; }
+  body{ background: var(--paper); }
+  .nav{ display: none; }
+  .reveal{ opacity: 1 !important; transform: none !important; }
+  .hero{ min-height: auto; padding-top: 2rem; padding-bottom: 2rem; }
+  .hero__cue, .video-cap{ display: none; }
+  .section-head{ padding-top: 2.4rem; }
+  .case, .case--compact{ padding-top: 2rem; break-before: page; }
+  .case__head, .case__block, .compare, .duo, .split, .stat, .skills__col,
+  .case__outcome, .cv__row, .bleed, figure{ break-inside: avoid; }
+  .about, .contact{ break-before: page; padding-top: 2rem; }
+  .hero__title, .block__lead, .case__title, .about__lead h2, .contact__title,
+  .section-head__title{ break-after: avoid; }
+  a{ color: inherit; text-decoration: none; }
+  .bleed img, .split__media img, .duo img{ box-shadow: none; }
+}
