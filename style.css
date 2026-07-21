@@ -147,7 +147,7 @@ main{ position: relative; z-index: 2; }
 .tag--award{ background: var(--indigo-soft); border-color: transparent; color: var(--indigo-deep); font-weight: 600; }
 
 /* images */
-.bleed{ margin-block: clamp(2rem, 5vw, 3.5rem); }
+.bleed{ margin-block: clamp(2rem, 5vw, 3.5rem); max-width: 840px; margin-inline: auto; }
 .bleed img{ width: 100%; border-radius: var(--r-lg); box-shadow: var(--shadow-md); }
 .bleed--frame img{ border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
 
