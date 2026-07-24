@@ -272,8 +272,8 @@ main{ position: relative; z-index: 2; }
   padding: clamp(1.4rem, 3vw, 2.1rem) 0; border-bottom: 1px solid var(--line); align-items: start;
 }
 .cv__label{
-  font-family: var(--display); font-size: .82rem; font-weight: 600; letter-spacing: .01em;
-  color: var(--indigo-deep); padding-top: .2rem;
+  font-family: var(--display); font-size: 1.1rem; font-weight: 700; letter-spacing: -.01em;
+  color: var(--indigo-deep); padding-top: .1rem;
 }
 .cv__body{ color: var(--ink-soft); }
 .cv__body p + p{ margin-top: .7rem; }
