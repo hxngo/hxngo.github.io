@@ -177,8 +177,10 @@ main{ position: relative; z-index: 2; }
 }
 .video-link:hover .video-play{ transform: translate(-50%,-50%) scale(1.08); background: var(--indigo); }
 .video-cap{ margin-top: 1rem; }
-.video-cap a{ font-family: var(--display); font-size: .82rem; font-weight: 600; color: var(--indigo-deep); text-decoration: none; }
-.video-cap a:hover{ text-decoration: underline; }
+.video-cap a{ font-family: var(--display); font-size: .82rem; font-weight: 600; color: var(--indigo-deep);
+  text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px;
+  text-decoration-color: color-mix(in oklab, var(--indigo) 55%, transparent); }
+.video-cap a:hover{ text-decoration-color: var(--indigo); }
 
 .case__block{ margin-block: clamp(3rem, 8vw, 6.5rem); }
 .case__block.narrow{ max-width: 78ch; }
