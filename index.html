@@ -110,9 +110,22 @@
     <p class="block__label reveal">03 — UX 결정</p>
     <h4 class="block__lead reveal">구매 불안을 3단계 피팅으로 없앴습니다.</h4>
     <p class="block__body reveal">“내 몸에 어울릴까”라는 불안이 빈티지 구매의 가장 큰 마찰입니다. 내 사진 등록 → 아이템 선택 → 결과 확인의 <strong>3단계로 압축</strong>하고, 촬영 가이드를 내장해 실패율을 낮췄습니다. 결과는 원본과 나란히 비교해 “사기 전 확인”이라는 가치를 화면으로 증명했습니다.</p>
-    <div class="duo reveal">
-      <figure><img src="assets/drip-fitting-select.jpg" alt="AI 피팅 — 내 사진과 상품을 한 화면에서 선택" loading="lazy" /><figcaption>① 내 사진 + 상품 선택</figcaption></figure>
-      <figure><img src="assets/drip-fitting-result.jpg" alt="AI 피팅 결과 — 원본과 피팅 결과를 비교" loading="lazy" /><figcaption>② 원본 / 결과 비교</figcaption></figure>
+    <div class="fit-row reveal">
+      <figure class="fit-select">
+        <img src="assets/drip-fitting-select.jpg" alt="AI 피팅 — 내 사진과 상품을 한 화면에서 선택" loading="lazy" />
+        <figcaption>① 내 사진 + 상품 선택 · 결과 1분 안팎</figcaption>
+      </figure>
+      <figure class="fit-slider">
+        <div class="ba" id="fitBA" aria-label="피팅 전후 비교 슬라이더 — 드래그">
+          <img class="ba-after" src="assets/fit-after.jpg" alt="AI 피팅 결과 — 파란 MSGM 셔츠 착용" loading="lazy" />
+          <div class="ba-before" id="fitBefore"><img src="assets/fit-before.jpg" alt="피팅 전 원본 — 검정 탱크톱" /></div>
+          <span class="ba-tag l">BEFORE</span>
+          <span class="ba-tag r">AFTER</span>
+          <div class="ba-line" id="fitLine"></div>
+          <div class="ba-knob" id="fitKnob" aria-hidden="true">⟷</div>
+        </div>
+        <figcaption>② 드래그해서 피팅 전 / 후 비교 →</figcaption>
+      </figure>
     </div>
   </div>
 

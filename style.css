@@ -200,6 +200,25 @@ main{ position: relative; z-index: 2; }
 .duo img{ width: 100%; border-radius: var(--r-md); box-shadow: var(--shadow-md); background: #14121f; }
 .duo figcaption{ font-family: var(--display); font-size: .78rem; font-weight: 500; color: var(--ink-faint); margin-top: .9rem; }
 
+/* D · drip fitting before/after slider (stacked: UI context on top, slider below) */
+.fit-row{ margin-top: clamp(2rem, 5vw, 3rem); }
+.fit-select{ margin: 0 auto; max-width: 720px; }
+.fit-select img{ width: 100%; display: block; border-radius: var(--r-md); box-shadow: var(--shadow-md); border: 1px solid var(--line); }
+.fit-row figcaption{ font-family: var(--display); font-size: .78rem; font-weight: 500; color: var(--ink-faint); margin-top: .9rem; text-align: center; }
+.fit-slider{ margin: clamp(2.4rem, 6vw, 4rem) auto 0; max-width: 380px; }
+.ba{ position: relative; width: 100%; aspect-ratio: 880 / 1280; border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-md); user-select: none; touch-action: none; cursor: ew-resize; background: #0d0d10; }
+.ba .ba-after{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.ba .ba-before{ position: absolute; inset: 0; width: 50%; overflow: hidden; }
+.ba .ba-before img{ position: absolute; top: 0; left: 0; height: 100%; width: auto; max-width: none; pointer-events: none; }
+.ba .ba-tag{ position: absolute; top: 12px; font-family: var(--display); font-size: .66rem; font-weight: 700; letter-spacing: .1em; color: #fff; background: rgba(0,0,0,.5); padding: .28rem .6rem; border-radius: 100px; z-index: 3; }
+.ba .ba-tag.l{ left: 12px; } .ba .ba-tag.r{ right: 12px; }
+.ba .ba-line{ position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: #fff; transform: translateX(-1px); box-shadow: 0 0 12px rgba(0,0,0,.45); z-index: 2; }
+.ba .ba-knob{ position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 42px; height: 42px; border-radius: 50%; background: #fff; box-shadow: 0 4px 14px rgba(0,0,0,.35); display: grid; place-items: center; color: var(--indigo-deep); font-size: .9rem; z-index: 3; }
+@media (max-width: 760px){
+  .fit-select{ max-width: 520px; }
+  .fit-slider{ max-width: 340px; }
+}
+
 /* outcome — deep indigo rounded panel */
 .case__outcome{
   margin-block: clamp(3rem, 8vw, 6.5rem); padding: clamp(2.4rem, 6vw, 4.5rem);
@@ -323,7 +342,7 @@ main{ position: relative; z-index: 2; }
   .section-head{ padding-top: 2.4rem; }
   .case, .case--compact{ padding-top: 2rem; break-before: page; }
   .case__head, .case__block, .compare, .duo, .split, .stat, .skills__col,
-  .case__outcome, .cv__row, .bleed, figure{ break-inside: avoid; }
+  .case__outcome, .cv__row, .bleed, .fit-row, .ba, figure{ break-inside: avoid; }
   .about, .contact{ break-before: page; padding-top: 2rem; }
   .hero__title, .block__lead, .case__title, .about__lead h2, .contact__title,
   .section-head__title{ break-after: avoid; }

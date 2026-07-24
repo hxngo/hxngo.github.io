@@ -3,6 +3,7 @@
 (function () {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+  if (hasGSAP) gsap.registerPlugin(ScrollTrigger);
 
   // ---------- scroll-aware nav (always on, native scroll) ----------
   const nav = document.querySelector('.nav');
@@ -21,13 +22,40 @@
     }, { passive: true });
   }
 
+  // ---------- D · drip fitting before/after slider (works without GSAP) ----------
+  (function () {
+    const ba = document.getElementById('fitBA');
+    if (!ba) return;
+    const before = document.getElementById('fitBefore');
+    const line = document.getElementById('fitLine');
+    const knob = document.getElementById('fitKnob');
+    function set(clientX) {
+      const r = ba.getBoundingClientRect();
+      let p = (clientX - r.left) / r.width;
+      p = Math.max(0, Math.min(1, p));
+      const pct = (p * 100) + '%';
+      before.style.width = pct; line.style.left = pct; knob.style.left = pct;
+    }
+    let down = false;
+    ba.addEventListener('pointerdown', (e) => { down = true; set(e.clientX); ba.setPointerCapture(e.pointerId); });
+    ba.addEventListener('pointermove', (e) => { if (down) set(e.clientX); });
+    window.addEventListener('pointerup', () => { down = false; });
+    // gentle hint on first view (needs GSAP; harmless if absent)
+    if (hasGSAP) {
+      ScrollTrigger.create({ trigger: ba, start: 'top 78%', once: true, onEnter: () => {
+        const o = { v: 62 };
+        gsap.to(o, { v: 42, duration: 1.15, ease: 'power2.inOut', onUpdate: () => {
+          const w = o.v + '%'; before.style.width = w; line.style.left = w; knob.style.left = w;
+        }});
+      }});
+    }
+  })();
+
   // ---------- fallback: no motion ----------
   if (reduce || !hasGSAP) {
     document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
     return;
   }
-
-  gsap.registerPlugin(ScrollTrigger);
 
   // ---------- C · reveal (fade-up) for generic .reveal, batched ----------
   gsap.set('.reveal', { opacity: 0, y: 22 });
