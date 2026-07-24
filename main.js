@@ -87,14 +87,7 @@
   }
   // contact title: handled by the generic .reveal fade-up
 
-  // ---------- B · parallax on photographic hero images only (not UI screenshots) ----------
-  document.querySelectorAll('.bleed:not(.bleed--frame) img').forEach((img) => {
-    gsap.set(img, { scale: 1.14 });
-    gsap.fromTo(img, { yPercent: -7 }, {
-      yPercent: 7, ease: 'none',
-      scrollTrigger: { trigger: img.closest('.bleed'), start: 'top bottom', end: 'bottom top', scrub: true }
-    });
-  });
+  // ---------- B · parallax removed — drip hero has edge content that must not crop ----------
 
   // ---------- E · hover zoom limited to YouTube-linked images (STAI, RAG) ----------
   // handled purely in CSS: .video-link:hover img { scale }
