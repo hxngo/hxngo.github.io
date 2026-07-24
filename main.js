@@ -68,19 +68,8 @@
     });
   });
 
-  // ---------- E · magnetic buttons ----------
-  document.querySelectorAll('.hero__cue, .contact__links a:first-child').forEach((btn) => {
-    const parent = btn;
-    parent.addEventListener('pointermove', (e) => {
-      const r = parent.getBoundingClientRect();
-      const x = e.clientX - r.left - r.width / 2;
-      const y = e.clientY - r.top - r.height / 2;
-      gsap.to(parent, { x: x * 0.35, y: y * 0.5, duration: 0.4, ease: 'power3.out' });
-    });
-    parent.addEventListener('pointerleave', () => {
-      gsap.to(parent, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1,0.4)' });
-    });
-  });
+  // ---------- E · hover zoom limited to YouTube-linked images (STAI, RAG) ----------
+  // handled purely in CSS: .video-link:hover img { scale }
 
   // keep ScrollTrigger in sync after images/fonts load
   window.addEventListener('load', () => ScrollTrigger.refresh());
