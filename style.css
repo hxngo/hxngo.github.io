@@ -278,9 +278,9 @@ main{ position: relative; z-index: 2; }
 .cv__body{ color: var(--ink-soft); }
 .cv__body p + p{ margin-top: .7rem; }
 .cv__body strong{ color: var(--ink); font-weight: 600; }
-.cv__list{ list-style: none; display: grid; gap: .7rem; }
-.cv__list li{ display: grid; grid-template-columns: 66px 1fr; gap: 1rem; align-items: baseline; }
-.cv__date{ font-family: var(--display); font-size: .78rem; font-weight: 500; color: var(--ink-faint); }
+.cv__list{ list-style: none; display: grid; gap: .8rem; }
+.cv__list li{ position: relative; padding-left: 82px; line-height: 1.55; }
+.cv__date{ position: absolute; left: 0; top: .18em; width: 70px; font-family: var(--display); font-size: .78rem; font-weight: 500; color: var(--ink-faint); }
 
 /* ---------- CONTACT ---------- */
 .contact{ padding-top: clamp(6rem, 14vw, 12rem); padding-bottom: clamp(4rem, 9vw, 7rem); }
