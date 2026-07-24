@@ -51,6 +51,8 @@ body{
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 img{ display: block; max-width: 100%; height: auto; }
