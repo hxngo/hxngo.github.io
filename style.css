@@ -56,6 +56,15 @@ body{
 img{ display: block; max-width: 100%; height: auto; }
 em{ font-style: normal; }
 
+/* ---------- scroll progress bar ---------- */
+.scroll-progress{
+  position: fixed; top: 0; left: 0; height: 3px; width: 0;
+  background: var(--indigo); z-index: 60; border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 10px rgba(91,87,224,.5);
+  transition: width .08s linear;
+  will-change: width;
+}
+
 /* ---------- NAV ---------- */
 .nav{
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
@@ -333,7 +342,7 @@ main{ position: relative; z-index: 2; }
   @page{ margin: 14mm 12mm; }
   html{ font-size: 14px; }
   body{ background: var(--paper); }
-  .nav{ display: none; }
+  .nav, .scroll-progress{ display: none; }
   .reveal{ opacity: 1 !important; transform: none !important; }
   .line-inner, .bleed img, .split__media img{ transform: none !important; }
   .bleed:not(.video-figure){ overflow: visible; }

@@ -5,6 +5,23 @@
   const hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
   if (hasGSAP) gsap.registerPlugin(ScrollTrigger);
 
+  // ---------- scroll progress bar (fills as you scroll) ----------
+  const prog = document.getElementById('scrollProgress');
+  if (prog) {
+    let pTick = false;
+    const updateProg = () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      prog.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+      pTick = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!pTick) { requestAnimationFrame(updateProg); pTick = true; }
+    }, { passive: true });
+    window.addEventListener('resize', updateProg, { passive: true });
+    window.addEventListener('load', updateProg);
+    updateProg();
+  }
+
   // ---------- scroll-aware nav (always on, native scroll) ----------
   const nav = document.querySelector('.nav');
   if (nav) {
