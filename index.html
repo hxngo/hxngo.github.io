@@ -226,7 +226,7 @@
     <figcaption class="video-cap"><a href="https://youtu.be/8JEhcp9r3hY" target="_blank" rel="noopener">▶ 시연 영상 보기 · 2:34</a></figcaption>
   </figure>
   <div class="case__block narrow">
-    <p class="block__body reveal">유튜브 강의 영상이 길어질수록 “필요한 부분만” 찾기가 어렵습니다. URL을 넣으면 영상 자막을 분석해 질문에 답하고 해당 구간으로 바로 이동시키는 도구로, 요약·검색·북마크를 <strong>한 화면에서 끝내도록</strong> 인터페이스를 설계했습니다. 영상 다운로드 → 음성 추출 → 텍스트 변환 → 임베딩까지의 파이프라인을 직관적인 흐름으로 감쌌습니다.</p>
+    <p class="block__body reveal">유튜브 강의 영상이 길어질수록 “필요한 부분만” 찾기가 어렵습니다. YouTube API로 강의 자막을 가져오고(자막이 없으면 Whisper로 음성을 텍스트로 변환), 임베딩으로 내용을 벡터화해 질문에 답하고 해당 구간으로 바로 이동시키는 도구입니다. 요약·검색·북마크를 <strong>한 화면에서 끝내도록</strong> 인터페이스를 설계했습니다.</p>
   </div>
 </article>
 
