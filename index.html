@@ -70,7 +70,7 @@
       <h3 class="case__title reveal">drip</h3>
       <p class="case__tagline reveal">AI 가상 피팅으로 사기 전에 입어보는 빈티지 커머스</p>
       <ul class="case__tags reveal">
-        <li>1인 기획·브랜딩·UX·개발</li>
+        <li>1인 기획·개발·배포</li>
         <li>2026</li>
         <li>출시 직전 · dripvtg.com</li>
       </ul>
@@ -109,9 +109,9 @@
   <!-- 결정 1 -->
   <div class="case__block split">
     <div class="split__text">
-      <p class="block__label reveal">02 — 설계 결정</p>
-      <h4 class="block__lead reveal">등록 장벽을 사진 한 장으로 낮췄습니다.</h4>
-      <p class="block__body reveal">중고 거래에서 판매자의 가장 큰 이탈 지점은 “귀찮은 등록”입니다. 그래서 판매자가 <strong>사진만 올리면 AI가 브랜드·컨디션·설명 초안을 채우고</strong>, 판매자는 확인·수정만 하도록 플로우를 뒤집었습니다. 입력을 요구하는 폼이 아니라, 이미 채워진 것을 다듬는 경험으로 설계한 결정입니다.</p>
+      <p class="block__label reveal">02 — 기술 구현</p>
+      <h4 class="block__lead reveal">판매자 등록을 AI로 자동화했습니다.</h4>
+      <p class="block__body reveal">판매자가 사진을 올리면 <strong>AI가 브랜드·컨디션·설명 초안을 생성</strong>하고, 판매자는 확인·수정만 하도록 등록 파이프라인을 구성했습니다.</p>
     </div>
     <figure class="split__media reveal">
       <img src="assets/drip-sell.png" alt="drip 판매 등록 화면 — 사진을 올리면 AI가 상품명·설명·브랜드·카테고리 초안을 채운다" loading="lazy" />
@@ -120,9 +120,9 @@
 
   <!-- 결정 2 -->
   <div class="case__block">
-    <p class="block__label reveal">03 — 설계 결정</p>
-    <h4 class="block__lead reveal">구매 불안을 3단계 피팅으로 없앴습니다.</h4>
-    <p class="block__body reveal">“내 몸에 어울릴까”라는 불안이 빈티지 구매의 가장 큰 마찰입니다. 내 사진 등록 → 아이템 선택 → 결과 확인의 <strong>3단계로 압축</strong>하고, 촬영 가이드를 내장해 실패율을 낮췄습니다. 결과는 원본과 나란히 비교해 “사기 전 확인”이라는 가치를 화면으로 증명했습니다.</p>
+    <p class="block__label reveal">03 — 기술 구현</p>
+    <h4 class="block__lead reveal">AI 가상 피팅·배경 제거를 서버 사이드로 구축했습니다.</h4>
+    <p class="block__body reveal">전신 사진 1장과 아이템을 입력하면 1분 안팎에 합성 결과를 반환합니다. 합성·배경 제거 파이프라인을 <strong>Cloud Run에서 상시 운영</strong>해, 어떤 사진이 올라와도 피드 품질을 일정하게 유지했습니다.</p>
     <div class="fit-row reveal">
       <figure class="fit-select">
         <img src="assets/drip-fitting-select.jpg" alt="AI 피팅 — 내 사진과 상품을 한 화면에서 선택" loading="lazy" />
@@ -145,9 +145,9 @@
   <!-- 브랜딩 -->
   <div class="case__block split split--reverse">
     <div class="split__text">
-      <p class="block__label reveal">04 — 브랜딩</p>
-      <h4 class="block__lead reveal">이름부터 마이크로카피까지, 하나의 목소리로.</h4>
-      <p class="block__body reveal">그래피티 로고와 모노크롬 아트 디렉션으로 빈티지 특유의 거친 무드를 잡고, <strong>“사기 전, 먼저 입어보기”</strong>라는 히어로 카피부터 전환 CTA까지 랜딩 전체를 직접 제작했습니다. 네이밍·톤앤매너·마이크로카피가 하나의 목소리로 이어지도록 다듬으며, 브랜드는 일관성으로 완성된다는 것을 체득했습니다.</p>
+      <p class="block__label reveal">04 — 아키텍처</p>
+      <h4 class="block__lead reveal">웹·iOS를 아우르는 구조를 직접 설계했습니다.</h4>
+      <p class="block__body reveal">Next.js·Supabase·Cloud Run·R2·iOS SwiftUI로 <strong>웹 30+ 페이지, API 65개, 웹·iOS 2개 플랫폼</strong>을 1인으로 구현했습니다. CSS 변수 디자인 토큰을 웹·iOS가 단일 출처로 공유하도록 구성했습니다.</p>
     </div>
     <figure class="split__media reveal">
       <img src="assets/drip-market-feed.png" alt="drip 마켓 피드 — 그래피티 배너와 카테고리 내비게이션" loading="lazy" />
@@ -157,8 +157,8 @@
   <!-- 결과 -->
   <div class="case__outcome reveal">
     <p class="block__label">05 — 배운 점</p>
-    <blockquote>잘 만든 화면보다, 끝까지 전달되는 서비스라는 것.</blockquote>
-    <p class="block__body">상품 발견부터 결제까지 전 구매 흐름을 직접 설계하고 출시 직전 단계까지 완성해보며, 화면을 잘 만드는 것과 서비스를 실제로 운영하는 것은 다른 문제라는 것을 배웠습니다. 통신판매업 신고나 안전거래 같은 운영 요건이 코드 밖에 있다는 것을 알게 된 프로젝트였습니다.</p>
+    <blockquote>잘 만든 코드보다, 끝까지 운영되는 서비스라는 것.</blockquote>
+    <p class="block__body">출시 직전 단계까지 완성하며, 서비스가 <strong>24×365 무중단으로 운영</strong>되어야 한다는 것과 통신판매업 신고·안전거래 같은 운영 요건이 코드 밖에 있다는 것을 직접 경험했습니다.</p>
   </div>
 </article>
 
@@ -187,7 +187,7 @@
     <p class="block__label reveal">문제</p>
     <p class="block__body reveal">국제기구 담당자가 개발도상국의 기후 자금 집행을 추적해야 하는데, 위성 이미지·센서 알림·진척률처럼 성격이 다른 정보가 흩어져 있어 한눈에 판단하기 어려웠습니다.</p>
     <p class="block__label reveal">설계 결정</p>
-    <p class="block__body reveal">무엇을 먼저 보여주고 무엇을 접어둘지 <strong>정보 위계를 잡아 한 화면에 통합</strong>하고, 다국적 담당자를 고려해 다국어·접근성을 설계 기준에 반영했습니다.</p>
+    <p class="block__body reveal"><strong>LLM으로 사업 보고서의 허위 징후를 탐지</strong>하고, 자금 흐름은 블록체인으로, 현장은 위성 이미지 분석(SAM)으로 원격 검증하는 3중 교차검증 구조입니다. 저는 LLM 보고서 분석 파이프라인과 MCP 시스템, 국제기구 담당자용 모니터링 대시보드를 담당했습니다.</p>
     <p class="block__label reveal">결과</p>
     <p class="block__body reveal">STAI 2025 <strong>대상(제주특별자치도지사상)</strong> 수상. 같은 아이디어를 발전시켜 UN 기후변화협약(UNFCCC)이 주최하는 국제 공모전 <strong>AI for Climate Action Award</strong>에 팀 STAI-tuned로 출품했습니다.</p>
   </div>
