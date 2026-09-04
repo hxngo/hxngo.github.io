@@ -18,6 +18,13 @@
   /* 배운 점 박스 축소: 짧은 내용에 맞게 패딩·여백 완화 */
   .case__outcome{ padding: clamp(1.6rem, 3.4vw, 2.6rem); }
   .case__outcome blockquote{ margin-bottom: .9rem; }
+  /* 논문 카드: 왼쪽 글 / 오른쪽 이미지 2단 */
+  .paper-split{ display:grid; grid-template-columns:1fr 0.82fr; gap:clamp(1.4rem,3vw,2.8rem); align-items:start; margin-top:1.2rem; }
+  .paper-split .paper-figure{ margin:0; position:sticky; top:2rem; border:1px solid rgba(0,0,0,.1); border-radius:12px; overflow:hidden; box-shadow:0 6px 24px rgba(0,0,0,.08); }
+  .paper-split .paper-figure img{ width:100%; display:block; }
+  .paper-split .case__block{ margin-block:0 !important; max-width:none; margin-inline:0; }
+  .paper-split .case__block + .case__block{ margin-top:1.4rem !important; }
+  @media (max-width:760px){ .paper-split{ grid-template-columns:1fr; } .paper-split .paper-figure{ position:static; max-width:440px; margin:0 auto; } }
 </style>
 </head>
 <body>
@@ -79,20 +86,24 @@
       </ul>
     </div>
   </header>
-  <figure class="reveal" style="max-width:440px;margin:1.6rem auto 0;border:1px solid rgba(0,0,0,.1);border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.08);">
-    <img src="assets/paper-jkiisc.png" alt="정보보호학회논문지(JKIISC) vol.35 no.2 게재 논문 첫 페이지 — 이규범·홍성관·김성진, 제주한라대" loading="lazy" style="width:100%;display:block;">
-  </figure>
-  <div class="case__block narrow">
-    <p class="block__label reveal">연구 배경</p>
-    <p class="block__body reveal">키보드 타이핑 소리는 평범한 소음처럼 들리지만, 그 안에는 <strong>어떤 문자를 눌렀는지</strong>가 새어 나옵니다. 이 정보 유출 위협을 AI로 탐지·복원할 수 있는지 검증한 연구입니다.</p>
-  </div>
-  <div class="case__block narrow">
-    <p class="block__label reveal">방법</p>
-    <p class="block__body reveal">FFT로 타이핑 음향을 주파수 도메인으로 변환해 특징을 추출하고, <strong>ResNet50과 멀티헤드 어텐션을 결합한 하이브리드 모델</strong>로 40개 키 입력을 분류했습니다.</p>
-  </div>
-  <div class="case__block narrow">
-    <p class="block__label reveal">결과</p>
-    <p class="block__body reveal">기존 CoAtNet 대비 <strong>정확도 96.81%(+3.61%p)</strong>를 달성했습니다. 정보보호학회논문지(JKIISC) vol.35 no.2, pp.253–264에 제2저자로 게재(KCI 등재)했습니다. <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003196117" target="_blank" rel="noopener">KCI에서 논문 보기 ↗</a></p>
+  <div class="paper-split reveal">
+    <div>
+      <div class="case__block narrow">
+        <p class="block__label reveal">연구 배경</p>
+        <p class="block__body reveal">키보드 타이핑 소리는 평범한 소음처럼 들리지만, 그 안에는 <strong>어떤 문자를 눌렀는지</strong>가 새어 나옵니다. 이 정보 유출 위협을 AI로 탐지·복원할 수 있는지 검증한 연구입니다.</p>
+      </div>
+      <div class="case__block narrow">
+        <p class="block__label reveal">방법</p>
+        <p class="block__body reveal">FFT로 타이핑 음향을 주파수 도메인으로 변환해 특징을 추출하고, <strong>ResNet50과 멀티헤드 어텐션을 결합한 하이브리드 모델</strong>로 40개 키 입력을 분류했습니다.</p>
+      </div>
+      <div class="case__block narrow">
+        <p class="block__label reveal">결과</p>
+        <p class="block__body reveal">기존 CoAtNet 대비 <strong>정확도 96.81%(+3.61%p)</strong>를 달성했습니다. 정보보호학회논문지(JKIISC) vol.35 no.2, pp.253–264에 제2저자로 게재(KCI 등재)했습니다. <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003196117" target="_blank" rel="noopener">KCI에서 논문 보기 ↗</a></p>
+      </div>
+    </div>
+    <figure class="paper-figure reveal">
+      <img src="assets/paper-jkiisc.png" alt="정보보호학회논문지(JKIISC) vol.35 no.2 게재 논문 첫 페이지 — 이규범·홍성관·김성진, 제주한라대" loading="lazy">
+    </figure>
   </div>
 </article>
 
