@@ -29,6 +29,8 @@
   /* 라벨 확대에 맞춰 태그·캡션 글씨도 정렬 */
   .case__tags li{ font-size:.9rem !important; }
   .video-cap a{ font-size:.9rem !important; }
+  /* 본문 다음 라벨 위에 한 줄 여백 (STAI·인물복원처럼 라벨/본문이 한 블록에 연달아 있는 경우) */
+  .block__body + .block__label{ margin-top:2.2rem; }
   @media (max-width:760px){ .paper-split{ grid-template-columns:1fr; } .paper-split .paper-figure{ position:static; max-width:440px; margin:0 auto; } }
 </style>
 </head>
