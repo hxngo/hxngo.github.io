@@ -20,7 +20,8 @@
   .case__outcome blockquote{ margin-bottom: .9rem; }
   /* 논문 카드: 왼쪽 글 / 오른쪽 이미지 2단 */
   .paper-split{ display:grid; grid-template-columns:1fr 0.82fr; gap:clamp(1.4rem,3vw,2.8rem); align-items:start; margin-top:1.2rem; }
-  .paper-split .paper-figure{ margin:0; position:sticky; top:2rem; border:1px solid rgba(0,0,0,.1); border-radius:12px; overflow:hidden; box-shadow:0 6px 24px rgba(0,0,0,.08); }
+  .paper-split .paper-figure{ margin:0; position:sticky; top:2rem; border:1px solid rgba(0,0,0,.1); border-radius:12px; overflow:hidden; box-shadow:0 6px 24px rgba(0,0,0,.08); transition:box-shadow .2s ease, transform .2s ease; }
+  .paper-split .paper-figure:hover{ box-shadow:0 12px 34px rgba(0,0,0,.16); transform:translateY(-2px); }
   .paper-split .paper-figure img{ width:100%; display:block; }
   .paper-split .case__block{ margin-block:0 !important; max-width:none; margin-inline:0; }
   .paper-split .case__block + .case__block{ margin-top:1.4rem !important; }
@@ -109,7 +110,9 @@
       </div>
     </div>
     <figure class="paper-figure reveal">
-      <img src="assets/paper-jkiisc.png" alt="정보보호학회논문지(JKIISC) vol.35 no.2 게재 논문 첫 페이지 — 이규범·홍성관·김성진, 제주한라대" loading="lazy">
+      <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003196117" target="_blank" rel="noopener" aria-label="KCI에서 논문 원문 보기" style="display:block;">
+        <img src="assets/paper-jkiisc.png" alt="정보보호학회논문지(JKIISC) vol.35 no.2 게재 논문 첫 페이지 — 이규범·홍성관·김성진, 제주한라대" loading="lazy">
+      </a>
     </figure>
   </div>
 </article>
